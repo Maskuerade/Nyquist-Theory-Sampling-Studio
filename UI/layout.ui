@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1274</width>
+    <height>724</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+background-color: rgb(20, 29, 38);
+background-color:#151a1e;
+
+QMessageBox {
+    background-color: #f0f0f0;
+    color: #fff;
+};
+QMessageBox QLabel {
+    color: #fff;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_6">
+    <item>
+     <widget class="QLabel" name="label_9">
+      <property name="font">
+       <font>
+        <family>MS Sans Serif</family>
+        <pointsize>15</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color : rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Sampling Studio - Nyquist - Shannon sampling theorem</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="windowTabs">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(27, 40, 54);
+color: rgb(255, 255, 255);
+background-color: rgb(20, 29, 38);
+background-color:#151a1e;</string>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Triangular</enum>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>14</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="mixerTab">
+       <attribute name="title">
+        <string>Mixer</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="PlotWidget" name="mixerGraph1">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_13">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_12">
+                  <item>
+                   <widget class="QLabel" name="label_10">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Components</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="signalMixerMenu">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>200</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_6">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Fixed</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>100</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_8">
+                  <item>
+                   <spacer name="horizontalSpacer_8">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="confirmMixerButton">
+                    <property name="minimumSize">
+                     <size>
+                      <width>190</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>190</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: #fff;
+  border: 2px solid rgb(190, 190, 190);
+
+  border-radius: 8px;
+
+  color: #0f1111;
+  
+
+
+  line-height: 29px;
+
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;</string>
+                    </property>
+                    <property name="text">
+                     <string> Confirm</string>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>../Images/quality.png</normaloff>../Images/quality.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>30</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_7">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Fixed</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="deleteMixerButton">
+                    <property name="minimumSize">
+                     <size>
+                      <width>190</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>190</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: #fff;
+  border: 2px solid rgb(190, 190, 190);
+
+  border-radius: 8px;
+
+  color: #0f1111;
+  
+
+
+  line-height: 29px;
+
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;</string>
+                    </property>
+                    <property name="text">
+                     <string>Delete</string>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>../Images/delete.png</normaloff>../Images/delete.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>40</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_11">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                  <item>
+                   <widget class="QLabel" name="label">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Magnitude</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Fixed</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>30</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QSlider" name="magnitudeMixerSlider">
+                    <property name="styleSheet">
+                     <string notr="true">QSlider {
+    background: transparent;
+}
+
+QSlider::groove:horizontal {
+    background: #E0E0E0;
+    height: 4px;
+    border-radius: 2px;
+}
+
+QSlider::handle:horizontal {
+    background: #0073E6;
+    border: 1px solid #0073E6;
+    width: 14px;
+    margin: -6px 0;
+    border-radius: 7px;
+}
+
+QSlider::add-page:horizontal {
+    background: transparent;
+}
+
+QSlider::sub-page:horizontal {
+    background: #0073E6;
+}
+</string>
+                    </property>
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLCDNumber" name="magnitudeMixerLcd">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>40</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+QLCDNumber::segment {
+    background-color: #000000;
+    color: #00CCFF;
+}
+
+QLCDNumber::indicator {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 1px solid #00CCFF;
+    width: 2px;
+}
+
+QLCDNumber::frame {
+    border: 2px solid #00CCFF;
+    border-radius: 5px;
+}
+</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_6">
+                  <item>
+                   <widget class="QLabel" name="label_2">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Frequency</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_4">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Fixed</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>30</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QSlider" name="freqMixerSlider">
+                    <property name="styleSheet">
+                     <string notr="true">QSlider {
+    background: transparent;
+}
+
+QSlider::groove:horizontal {
+    background: #E0E0E0;
+    height: 4px;
+    border-radius: 2px;
+}
+
+QSlider::handle:horizontal {
+    background: #0073E6;
+    border: 1px solid #0073E6;
+    width: 14px;
+    margin: -6px 0;
+    border-radius: 7px;
+}
+
+QSlider::add-page:horizontal {
+    background: transparent;
+}
+
+QSlider::sub-page:horizontal {
+    background: #0073E6;
+}
+</string>
+                    </property>
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLCDNumber" name="freqMixerLcd">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>40</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+QLCDNumber::segment {
+    background-color: #000000;
+    color: #00CCFF;
+}
+
+QLCDNumber::indicator {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 1px solid #00CCFF;
+    width: 2px;
+}
+
+QLCDNumber::frame {
+    border: 2px solid #00CCFF;
+    border-radius: 5px;
+}
+</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_7">
+                  <item>
+                   <widget class="QLabel" name="label_3">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Phase</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_5">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Fixed</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>65</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QSlider" name="phaseMixerSlider">
+                    <property name="styleSheet">
+                     <string notr="true">QSlider {
+    background: transparent;
+}
+
+QSlider::groove:horizontal {
+    background: #E0E0E0;
+    height: 4px;
+    border-radius: 2px;
+}
+
+QSlider::handle:horizontal {
+    background: #0073E6;
+    border: 1px solid #0073E6;
+    width: 14px;
+    margin: -6px 0;
+    border-radius: 7px;
+}
+
+QSlider::add-page:horizontal {
+    background: transparent;
+}
+
+QSlider::sub-page:horizontal {
+    background: #0073E6;
+}
+</string>
+                    </property>
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLCDNumber" name="phaseMixerLcd">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>40</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+QLCDNumber::segment {
+    background-color: #000000;
+    color: #00CCFF;
+}
+
+QLCDNumber::indicator {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 1px solid #00CCFF;
+    width: 2px;
+}
+
+QLCDNumber::frame {
+    border: 2px solid #00CCFF;
+    border-radius: 5px;
+}
+</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>3</width>
+                <height>111</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 251, 255);</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QPushButton" name="sampleMixerButton">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>10</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #fff;
+  border: 2px solid rgb(190, 190, 190);
+
+  border-radius: 8px;
+
+  color: #0f1111;
+  
+
+
+  line-height: 29px;
+
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;</string>
+                </property>
+                <property name="text">
+                 <string> Sample</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../Images/signal.png</normaloff>../Images/signal.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>30</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>30</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="clearMixerButton">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>32</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #fff;
+  border: 2px solid rgb(190, 190, 190);
+
+  border-radius: 8px;
+
+  color: #0f1111;
+  
+
+
+  line-height: 29px;
+
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;</string>
+                </property>
+                <property name="text">
+                 <string>Clear</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../Images/delete.png</normaloff>../Images/delete.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>30</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="viewerTab">
+       <attribute name="title">
+        <string>Sampler</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="PlotWidget" name="samplerGraph1"/>
+          </item>
+          <item>
+           <widget class="PlotWidget" name="samplerGraph2"/>
+          </item>
+          <item>
+           <widget class="PlotWidget" name="samplerGraph3"/>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QLabel" name="label_5">
+                <property name="text">
+                 <string>Max Frequency</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLCDNumber" name="maxFreqSamplerLcd">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>40</width>
+                  <height>60</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLCDNumber {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+QLCDNumber::segment {
+    background-color: #000000;
+    color: #00CCFF;
+}
+
+QLCDNumber::indicator {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 1px solid #00CCFF;
+    width: 2px;
+}
+
+QLCDNumber::frame {
+    border: 2px solid #00CCFF;
+    border-radius: 5px;
+}
+</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_6">
+                <property name="font">
+                 <font>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Hz</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>50</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>Sampling Frequency</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="FreqSamplerSlider">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>30</horstretch>
+                  <verstretch>49</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>200</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QSlider {
+    background: transparent;
+}
+
+QSlider::groove:horizontal {
+    background: #E0E0E0;
+    height: 4px;
+    border-radius: 2px;
+}
+
+QSlider::handle:horizontal {
+    background: #0073E6;
+    border: 1px solid #0073E6;
+    width: 14px;
+    margin: -6px 0;
+    border-radius: 7px;
+}
+
+QSlider::add-page:horizontal {
+    background: transparent;
+}
+
+QSlider::sub-page:horizontal {
+    background: #0073E6;
+}
+</string>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_3">
+                  <item>
+                   <widget class="QLCDNumber" name="freqSamplerLcd">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+QLCDNumber::segment {
+    background-color: #000000;
+    color: #00CCFF;
+}
+
+QLCDNumber::indicator {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 1px solid #00CCFF;
+    width: 2px;
+}
+
+QLCDNumber::frame {
+    border: 2px solid #00CCFF;
+    border-radius: 5px;
+}
+</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_7">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Hz</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_4">
+                  <item>
+                   <widget class="QLCDNumber" name="freqSamplerFactorLcd">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+QLCDNumber::segment {
+    background-color: #000000;
+    color: #00CCFF;
+}
+
+QLCDNumber::indicator {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 1px solid #00CCFF;
+    width: 2px;
+}
+
+QLCDNumber::frame {
+    border: 2px solid #00CCFF;
+    border-radius: 5px;
+}
+</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_8">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>x Fmax</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>50</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="2" column="2">
+               <widget class="QCheckBox" name="noiseCheckbox">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">
+QCheckBox {
+	color: #d3dae3;
+	padding: 2px;
+}
+QCheckBox:disabled {
+	color: #808086;
+	padding: 2px;
+}
+
+QCheckBox:hover {
+	border-radius:4px;
+	border-style:solid;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	border-width:1px;
+	border-color: transparent;
+}
+QCheckBox::indicator:checked {
+
+
+	
+	border-style:solid;
+	border-width: 1px;
+	border-color: #4fa08b;
+	color: #000000;
+	background-color: qradialgradient(cx:0.4, cy:0.4, radius: 1.5,fx:0, fy:0, stop:0 #1e282c, stop:0.3 #1e282c, stop:0.4 #4fa08b, stop:0.5 #1e282c, stop:1 #1e282c);
+}
+QCheckBox::indicator:unchecked {
+
+
+	border-style:solid;
+	border-width: 1px;
+	border-color: #4fa08b;
+	color: #000000;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Add White Noise</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3" rowspan="4">
+               <widget class="QSlider" name="noiseSlider">
+                <property name="styleSheet">
+                 <string notr="true">QSlider {
+    background: transparent;
+}
+
+QSlider::groove:vertical {
+    background: #E0E0E0;
+    background: #0073E6;
+    width: 4px; /* Set the width for a vertical groove */
+    border-radius: 2px;
+}
+
+QSlider::handle:vertical {
+    background: #0073E6;
+
+    border: 1px solid #0073E6;
+    height: 14px; /* Set the height for a vertical handle */
+    margin: 0 -6px; /* Adjust the margin to position the handle vertically */
+    border-radius: 7px;
+}
+
+QSlider::add-page:vertical {
+    background: transparent;
+}
+
+QSlider::sub-page:vertical {
+    background: #0073E6;
+  background: #E0E0E0;
+}
+</string>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2" alignment="Qt::AlignRight">
+               <widget class="QLCDNumber" name="snrLcd">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLCDNumber {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+QLCDNumber::segment {
+    background-color: #000000;
+    color: #00CCFF;
+}
+
+QLCDNumber::indicator {
+    background-color: #333333;
+    color: #00CCFF;
+    border: 1px solid #00CCFF;
+    width: 2px;
+}
+
+QLCDNumber::frame {
+    border: 2px solid #00CCFF;
+    border-radius: 5px;
+}
+</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="2" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="snrLabel">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>SNR</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QPushButton" name="clearSamplerButton">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #fff;
+  border: 2px solid rgb(190, 190, 190);
+
+  border-radius: 8px;
+
+  color: #0f1111;
+  
+
+
+  line-height: 29px;
+
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;</string>
+                </property>
+                <property name="text">
+                 <string> Clear</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../Images/delete.png</normaloff>../Images/delete.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>28</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QPushButton" name="browseSamplerButton">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #fff;
+  border: 2px solid rgb(190, 190, 190);
+
+  border-radius: 8px;
+
+  color: #0f1111;
+  
+
+
+  line-height: 29px;
+
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;</string>
+                </property>
+                <property name="text">
+                 <string> Browse</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../Images/browse.png</normaloff>../Images/browse.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>28</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1274</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
